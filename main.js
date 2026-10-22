@@ -4,7 +4,7 @@ const canvas = document.getElementById("canvas");
 // const pencil = canvas.getContext("2d");
 
 const cw = Math.min(600, window.innerWidth - 40);
-const ch = cw * (2 /3); // to add the ratio
+const ch = Lib.aspectRatio(cw, 2, 3); // to add the ratio
 
 const pencil = Lib.setupCanvas(canvas, cw, ch);
 
