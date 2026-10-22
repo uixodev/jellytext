@@ -4,13 +4,12 @@ const canvas = document.getElementById("canvas");
 const pencil = canvas.getContext("2d");
 
 const cw = Math.min(600, window.innerWidth - 40);
-const ch = cw * (2 /3);
+const ch = cw * (2 /3); // to add the ratio
 
 const dpr = window.devicePixelRatio || 1; // make higher resolution canvas
 
 canvas.width = cw * dpr;
 canvas.height = ch * dpr;
-
 
 pencil.scale(dpr, dpr);
 
