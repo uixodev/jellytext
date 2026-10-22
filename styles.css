@@ -1,6 +1,13 @@
 body{
     margin: 0;
-    background: #c8c5c5;
+    background: #ac5e5e;
     overflow: hidden;
-    cursor: none;
+    /* cursor: none; */
+}
+
+
+canvas {
+    width: 495px;
+    height: 330px;
+    background-color: white;
 }
