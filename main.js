@@ -1,17 +1,19 @@
 import * as Lib from "https://uixodev.github.io/library/index.js";
 
 const canvas = document.getElementById("canvas");
-const pencil = canvas.getContext("2d");
+// const pencil = canvas.getContext("2d");
 
 const cw = Math.min(600, window.innerWidth - 40);
 const ch = cw * (2 /3); // to add the ratio
 
-const dpr = window.devicePixelRatio || 1; // make higher resolution canvas
+const pencil = Lib.setupCanvas(canvas, cw, ch);
 
-canvas.width = cw * dpr;
-canvas.height = ch * dpr;
+// const dpr = window.devicePixelRatio || 1; // make higher resolution canvas
 
-pencil.scale(dpr, dpr);
+// canvas.width = cw * dpr;
+// canvas.height = ch * dpr;
+
+// pencil.scale(dpr, dpr);
 
 const circle = {
     x: cw / 2,
