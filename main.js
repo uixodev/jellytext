@@ -24,6 +24,28 @@ const circle = {
     s: 1 // speed
 }
 
+
+const peachRec = {
+    x: 50,
+    y: 60,
+    w: ch / 2,
+    h: ch / 2
+}
+
+const blueRec = {
+    x: peachRec.x + peachRec.w + 20, 
+    y: 100,
+    w: 200,
+    h: 80
+}
+
+const goldenRec = {
+    x: 120 + (ch / 2),
+    y: 55 + (ch / 2),
+    w: 80,
+    h: 50
+}
+
 function animate(){ 
     pencil.clearRect(0, 0, cw, ch);
 
@@ -34,13 +56,13 @@ function animate(){
 
     // pencil.fill();
     pencil.fillStyle = "rgb(233, 154, 120)";
-    pencil.fillRect(50, 60, ch / 2, ch / 2);
+    pencil.fillRect(peachRec.x, peachRec.y, peachRec.w, peachRec.h);
 
     pencil.fillStyle = "#668A86";
-    pencil.fillRect(70 + (ch / 2), 100, 200, 80);
+    pencil.fillRect(blueRec.x, blueRec.y, blueRec.w, blueRec.h);
 
     pencil.fillStyle = "#E2BD65";
-    pencil.fillRect(120 + (ch / 2), 55 + (ch / 2), 80, 50);
+    pencil.fillRect(goldenRec.x, goldenRec.y, goldenRec.w, goldenRec.h);
 
     requestAnimationFrame(animate); // basically it says, loop, animate, like play, 
     // PLAY, LOOP
