@@ -4,7 +4,7 @@ const canvas = document.getElementById("canvas");
 // const pencil = canvas.getContext("2d");
 
 const cw = Math.min(600, window.innerWidth - 40);
-const ch = Lib.aspectRatio(cw, 2, 3); // to add the ratio
+const ch = Lib.aspectRatio(cw, 16, 10); // to add the ratio
 
 const pencil = Lib.setupCanvas(canvas, cw, ch);
 
@@ -24,15 +24,23 @@ const circle = {
     s: 1 // speed
 }
 
-function animate(){
+function animate(){ 
     pencil.clearRect(0, 0, cw, ch);
 
     // circle.x = circle.x + circle.s;
 
     pencil.beginPath();
-    pencil.arc(circle.x, circle.y, circle.r, 0, Math.PI * 2);
+    // pencil.arc(circle.x, circle.y, circle.r, 0, Math.PI * 2);
 
-    pencil.fill();
+    // pencil.fill();
+    pencil.fillStyle = "rgb(233, 154, 120)";
+    pencil.fillRect(50, 60, ch / 2, ch / 2);
+
+    pencil.fillStyle = "#668A86";
+    pencil.fillRect(70 + (ch / 2), 100, 200, 80);
+
+    pencil.fillStyle = "#E2BD65";
+    pencil.fillRect(120 + (ch / 2), 55 + (ch / 2), 80, 50);
 
     requestAnimationFrame(animate); // basically it says, loop, animate, like play, 
     // PLAY, LOOP
