@@ -15,6 +15,8 @@ const pencil = Lib.setupCanvas(canvas, cw, ch);
 
 // pencil.scale(dpr, dpr);
 
+const extraWidth = 10;
+
 const circle = {
     x: cw / 2,
     y: ch / 2,
@@ -28,7 +30,7 @@ const circle = {
 const peachRec = {
     x: 50,
     y: 60,
-    w: ch / 2,
+    w: (ch / 2),
     h: ch / 2
 }
 
@@ -39,16 +41,19 @@ const blueRec = {
     h: 80
 }
 
+const gapPB = blueRec.x - (peachRec.x + peachRec.w);
+
 const goldenRec = {
-    x: 120 + (ch / 2),
-    y: 55 + (ch / 2),
+    x: peachRec.x + peachRec.w + gapPB * 3,
+    y: blueRec.y + blueRec.h + 30,
     w: 80,
     h: 50
 }
 
+
+
 function animate(){ 
     pencil.clearRect(0, 0, cw, ch);
-
     // circle.x = circle.x + circle.s;
 
     pencil.beginPath();
