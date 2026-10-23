@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background:black;
+    background:rgb(41, 40, 40);
     overflow: hidden;
     /* cursor: none; */
 
@@ -16,7 +16,7 @@ canvas {
     width: 70%;
     max-width: 100%;
     height: auto;   
-    border-radius: 20px;
+    /* border-radius: 10px; */
     /* margin-left: 100px;
     margin-top: 50px; */
 }
