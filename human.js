@@ -5,7 +5,7 @@ const canvas = document.getElementById("canvas");
 const cw = Math.min(600, window.innerWidth - 40);
 const ch = Lib.aspectRatio(cw, 3, 4);
 
-const columns = 6;
+const columns = 5;
 const cellWidth = cw / columns;
 const heightColumns = ch / cellWidth;
 const cellHeight = ch / heightColumns;
@@ -30,21 +30,33 @@ function animate(){
     // pencil.fillStyle = "rgb(60, 180, 30)";
     // pencil.fillRect(cellWidth * 2, 0, cellWidth, cellWidth);
 
-    for (let raw = 0; raw < heightColumns; raw++){
+    for (let row = 0; row < heightColumns; row++){
         for (let i = 0; i < columns; i++){
         // const redStep = (255 - 179) / (columns - 1);
         // const greenStep = (255 - 219) / (columns - 1);
         // const blueStep = (255 - 214) / (columns - 1);
         // pencil.fillStyle = `rgb(${179 + i * redStep}, ${219 + i * greenStep}, ${214 + i * blueStep})`;
         // rgb(${179 + i * 15}, ${219 + i * 7}, ${214 + i * 8})
-
+        
         pencil.fillStyle = "#90b4b0";
-        pencil.fillRect(
-            cellWidth * i, 
-            cellHeight * raw, 
-            cellWidth, 
-            cellHeight);
-    }
+            pencil.fillRect(
+                cellWidth * i, 
+                cellHeight * row, 
+                cellWidth, 
+                cellHeight
+            )
+        }
+
+        pencil.strokeStyle = "#ffffff";
+        pencil.lineWidth = 2;
+
+            pencil.strokeRect(
+                cellWidth * i, 
+                cellHeight * row, 
+                cellWidth, 
+                cellHeight
+            )
+        
     }
     
 
