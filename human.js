@@ -7,10 +7,13 @@ const ch = Lib.aspectRatio(cw, 3, 4);
 
 const columns = 5;
 const cellWidth = cw / columns;
-const heightColumns = ch / cellWidth;
+const heightColumns = Math.floor(ch / cellWidth); // rounds a number DOWN to the nearest whole number
 const cellHeight = ch / heightColumns;
 console.log("Canvas width:", cw);
 console.log("Cell width:", cellWidth);
+console.log(heightColumns);
+console.log(cellHeight);
+console.log(ch);
 
 const pencil = Lib.setupCanvas(canvas, cw, ch);
 
@@ -38,27 +41,30 @@ function animate(){
         // pencil.fillStyle = `rgb(${179 + i * redStep}, ${219 + i * greenStep}, ${214 + i * blueStep})`;
         // rgb(${179 + i * 15}, ${219 + i * 7}, ${214 + i * 8})
         
-        pencil.fillStyle = "#90b4b0";
-            pencil.fillRect(
-                cellWidth * i, 
-                cellHeight * row, 
-                cellWidth, 
-                cellHeight
-            )
+        if ((i + row) % 5 === 0) { // checks if the number is even
+            pencil.fillStyle = "#90b4b0";
+        } else {
+            pencil.fillStyle = "#e99a78";
         }
+        pencil.fillRect(
+            cellWidth * i, 
+            cellHeight * row, 
+            cellWidth, 
+            cellHeight
+        )
 
         pencil.strokeStyle = "#ffffff";
-        pencil.lineWidth = 2;
+        pencil.lineWidth = 5;
 
-            pencil.strokeRect(
-                cellWidth * i, 
-                cellHeight * row, 
-                cellWidth, 
-                cellHeight
-            )
+        pencil.strokeRect(
+            cellWidth * i, 
+            cellHeight * row, 
+            cellWidth, 
+            cellHeight
+        )
+        }
         
     }
-    
 
     // for (let i = 0; i < columns; i++){
     //     pencil.fillStyle = "#e99a78";
